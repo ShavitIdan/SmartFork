@@ -1,9 +1,16 @@
 .nav-pills li a:hover {
     background-color: #8583FF;
+    color: white;
 }
 .btn:hover{
     background-color: white;
 }
+<<<<<<< HEAD
+=======
+.btn:hover{
+    background-color: white;
+}
+>>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
 .strong-blue {
     background-color: #8583FF;
 }
@@ -14,9 +21,12 @@
 .color-blue {
     color: #8583FF;
 }
+<<<<<<< HEAD
+=======
 #list a:hover{
     background-color: gray;
 }
+>>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
 .strong-red{
     color: #CB0A0A  ;
 }
@@ -26,3 +36,33 @@
 .strong-green{
     color :#07C703;
 }
+<<<<<<< HEAD
+
+.text-darker{
+    color: #3A3541;
+}
+.text-grey {
+    color : #89868D;
+}
+.person:hover{
+    background-color: #F5F5F5;
+}
+span {
+    font-family: 'DM Sans';
+}
+.pepperProfile{
+    position: absolute;
+    left: 390px;
+    top: 135px;
+}
+.fixed-top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+=======
+>>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
