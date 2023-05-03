@@ -1,7 +1,9 @@
 .nav-pills li a:hover {
     background-color: #8583FF;
 }
-
+.btn:hover{
+    background-color: white;
+}
 .strong-blue {
     background-color: #8583FF;
 }
@@ -9,7 +11,18 @@
 .light-blue {
     background-color: #F1F7FA;
 }
-
-.light-red {
-    
+.color-blue {
+    color: #8583FF;
+}
+#list a:hover{
+    background-color: gray;
+}
+.strong-red{
+    color: #CB0A0A  ;
+}
+.strong-orange{
+    color: #F4671F;
+}
+.strong-green{
+    color :#07C703;
 }
