@@ -5,12 +5,6 @@
 .btn:hover{
     background-color: white;
 }
-<<<<<<< HEAD
-=======
-.btn:hover{
-    background-color: white;
-}
->>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
 .strong-blue {
     background-color: #8583FF;
 }
@@ -21,12 +15,6 @@
 .color-blue {
     color: #8583FF;
 }
-<<<<<<< HEAD
-=======
-#list a:hover{
-    background-color: gray;
-}
->>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
 .strong-red{
     color: #CB0A0A  ;
 }
@@ -36,7 +24,6 @@
 .strong-green{
     color :#07C703;
 }
-<<<<<<< HEAD
 
 .text-darker{
     color: #3A3541;
@@ -64,5 +51,3 @@ span {
     display: flex;
     justify-content: space-between;
 }
-=======
->>>>>>> 950541dd3b65e04d1c47a07edc315f476809d3cb
