@@ -34,8 +34,11 @@
 .person:hover{
     background-color: #F5F5F5;
 }
-span {
+span,label,a {
     font-family: 'DM Sans';
+}
+a{
+    text-decoration:none;
 }
 /* .pepperProfile{
     position: absolute;
@@ -50,4 +53,11 @@ span {
 .flexbox {
     display: flex;
     justify-content: space-between;
+}
+#white_parg{
+    background-color: white;
+}
+
+#titleSize{
+    font-size: 24px;
 }
