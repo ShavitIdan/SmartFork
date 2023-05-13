@@ -2,8 +2,30 @@
     background-color: #8583FF;
     color: white;
 }
-.btn:hover{
+#userList a {
     background-color: white;
+}
+#userList a:hover {
+    background-color: #F1F7FA;
+}
+#breadcrumb a{
+    text-decoration:none;
+    font-size: 24px;
+}
+#breadcrumb a .selected{
+    color: #8583FF;
+}
+.searchBox {
+    border-color:  #8583FF;
+}
+.searchBtn{
+    border-color:  #8583FF; 
+    color: #8583FF;
+}
+
+.searchBtn:hover{
+    background-color: #8583FF;
+    color: white;
 }
 .strong-blue {
     background-color: #8583FF;
@@ -44,11 +66,6 @@ label{
 a{
     text-decoration:none;
 }
-/* .pepperProfile{
-    position: absolute;
-    left: 280px;
-    top: 135px;
-} */
 .fixed-top-left {
     position: fixed;
     top: 0;

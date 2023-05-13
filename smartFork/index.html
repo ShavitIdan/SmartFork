@@ -16,8 +16,9 @@
             <div id="navigation" class="container-fluid col-2">
                 <div class="col-auto fixed-top-left">
                     <div class="p-1">
+                        <!-- make the logo background image -->
                         <a href="#" class="px-3">
-                            <img id="logo" src="images/SmartForkIcon.png">
+                            <img id="logo" src="images/SmartForkIcon.png"> 
                         </a>
                         <ul class="nav nav-pills flex-column mt-4 pb-5">
                             <li class="nav-item m-1">
@@ -77,21 +78,21 @@
             <div id="main" class="container-fluid col-10 light-blue">
                 <div class="row p-2">
                     <!-- Breadcrumb and search bar-->
-                    <form class="d-flex my-1">
+                    <form id="breadcrumb" class="d-flex my-1">
                         <div class="col-2 my-2 d-none d-sm-block ">
-                            <a href="#" class="text-black " style="text-decoration:none;font-size: 24px; ">Users/</a>
-                            <a href="#" style="text-decoration:none;color: #8583FF;font-size: 24px;">Clients</a>
+                            <a href="#" class="text-black">Users/</a>
+                            <a href="#" class="selected">Clients</a>
                         </div>
                         <div class="col-1 d-none d-sm-block"></div>   
-                        <input class="form-control mr-sm-2" style="border-color:  #8583FF;" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" style="border-color:  #8583FF; color: #8583FF;" type="submit">Search</button>
+                        <input class="searchBox form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="searchBtn btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         <div class="col-4 d-none d-sm-block"></div> 
                     </form>
-                    <div class="container-fluid border rounded mt-4">
+                    <div id="userList" class="container-fluid border rounded mt-4">
                         <!-- name........ -->
                         <div class="row p-4">
                             <div class="col-3 ml-2 d-none d-sm-block">
-                                <span class="nav-link text-darker"><b>Name</b></span>
+                                <span class="nav-link text-darker "><b>Name</b></span>
                             </div>
                             <div class="col-2 ml-2 d-none d-sm-block">
                                 <span class="nav-link text-darker"><b>Weight (kg)</b></span>
@@ -110,7 +111,7 @@
                             </div>
                         </div>
                         <!-- pepper -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=1" class="row p-3 person dietCM">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
                                     <div class="col-auto p-1">
@@ -139,9 +140,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Custom made</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- Rafaella -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=2" class="row p-3 person dietCM">
                             
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
@@ -171,9 +172,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Custom made</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- Elizeu -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=3" class="row p-3 person dietCarn">
                             
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
@@ -203,9 +204,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Carnivore</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- Moshe -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=4" class="row p-3 person dietLC">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
                                     <div class="col-auto p-1">
@@ -234,9 +235,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Low-Carbs</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- Ziv -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=5" class="row p-3 person dietVG">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
                                     <div class="col-auto p-1">
@@ -265,9 +266,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Veganism</span>
                             </div>
-                        </div>
+                        </a>
                          <!-- Nir -->
-                         <div class="row p-3 person" style="background-color: white;">
+                         <a href="index2.html?userId=6" class="row p-3 person dietLC">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
                                     <div class="col-auto p-1">
@@ -296,9 +297,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Low- Carbs</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- Own -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=7" class="row p-3 person dietCM">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center">   
                                     <div class="col-auto p-1">
@@ -327,9 +328,9 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Custom-made</span>
                             </div>
-                        </div>
+                        </a>
                         <!-- ian -->
-                        <div class="row p-3 person" style="background-color: white;">
+                        <a href="index2.html?userId=8" class="row p-3 person dietCM">
                             <div class="col-3 ml-2 ">
                                 <div class="d-flex align-items-center ">   
                                     <div class="col-auto p-1">
@@ -357,7 +358,7 @@
                             <div class="col-1 ml-2 d-flex align-items-center">
                                 <span class="text-grey">Custom-made</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
