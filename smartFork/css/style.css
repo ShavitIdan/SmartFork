@@ -37,6 +37,10 @@
 span,label,a {
     font-family: 'DM Sans';
 }
+label{
+    font-size: 12px;
+    font-family: 'DM Sans';
+}
 a{
     text-decoration:none;
 }
@@ -60,4 +64,7 @@ a{
 
 #titleSize{
     font-size: 24px;
+}
+#submit:hover{
+    background-color: green;
 }

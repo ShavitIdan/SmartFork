@@ -23,7 +23,45 @@ window.onload = () => {
     
     
     })
-    
+    // ------------------------------------------------------------------- index2
+    var ctxP = document.getElementById("pieChart").getContext('2d');
+    var myPieChart = new Chart(ctxP, {
+      type: 'pie',
+      data: {
+        labels: ["Ashley", "Goal"],
+        datasets: [{
+          data: [103,80],
+          backgroundColor: ["#F7464A", "#07C703"],
+          hoverBackgroundColor: ["#FF5A5E", "#07C703"]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    const ctx = document.getElementById("chart").getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Fats", "Protain", "Carbs", "Calories"],
+          datasets: [{
+            label: 'Ashley status',
+            backgroundColor: ["#F7464A", "#07C703","#07C703","#07C703"],
+            data: [620, 301, 896, 1248],
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          }
+        },
+      });
     // ------------------------------------------------------------------- index3
     
     $(function(){

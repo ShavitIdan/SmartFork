@@ -87,267 +87,365 @@
                     </div>
                     <div class="container-fluid border rounded mt-4">
                         <!-- top main -->
-                        <div class="row p-4">
-                            <div class="col-auto">
-                                <span id="titleSize" class="text-dark">New User</span>
+                        <form>
+                            <div class="row p-4">
+                                <div class="col-auto">
+                                    <span id="titleSize" class="text-dark">New User</span>
+                                </div>
+                                <div class="col-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-book" viewBox="0 0 16 16">
+                                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                                    </svg>    
+                                    <a href="#" class="text-grey " style="font-size: 12px; ">How-To</a>  
+                                </div>
+                                <div class="col-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                                        <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
+                                    </svg>
+                                    <a href="#" class="text-grey " style="font-size: 12px; ">Tutorial</a> 
+                                </div>
+                                <div class="col-6"></div>
+                                <div class="col-2">
+                                    <button  id="submit" type="submit" class="btn btn strong-blue">Generate</button>
+                                </div>
                             </div>
-                            <div class="col-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-book" viewBox="0 0 16 16">
-                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                                </svg>    
-                                <a href="#" class="text-grey " style="font-size: 12px; ">How-To</a>  
-                            </div>
-                            <div class="col-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
-                                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
-                                </svg>
-                                <a href="#" class="text-grey " style="font-size: 12px; ">Tutorial</a> 
-                            </div>
-                            <div class="col-6"></div>
-                            <div class="col-2">
-                                <button type="button" class="btn btn-success">Generate</button>
-                            </div>
-                        </div>
-                        <div id="white_parg" class="container-fluid">
-                            <form class=" row p-3">
+                            <!-- info person -->
+                            <div id="white_parg" class="container-fluid">
+                                
                                 <!-- title -->
-                                <div  class="row my-2">
+                                <div  class="row p-4 ">
                                     <div id="titleSize"class="col-auto">User information</div>
                                 </div>
-                                <div class="col-1"></div>
-                                <div class="col-5 my-2">
-                                    <!-- name -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="fullname">Enter user's fullname</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="fullname">(required)</label>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-5 my-2 ">
+                                        <!-- name -->
                                         <div class="row my-2">
                                             <div class="col-auto">
-                                                <div class="input-group fullname">
-                                                    <input type="text" class="form-control" value="Peper Ashley">
-                                                </div>
+                                                <label for="fullname">Enter user's fullname</label>
                                             </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- email -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="E-mail">Enter user's Email</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="E-mail">(required)</label>
-                                        </div>
-                                        <div class="row my-2">
                                             <div class="col-auto">
-                                                <div class="input-group E-mail">
-                                                    <input type="email" class="form-control" value="pashley@gmail.com">
-                                                </div>
+                                                <label class="text-danger"for="fullname">(required)</label>
                                             </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- BMI -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="BMI">Enter user's BMI</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="BMI">(required)</label>
-                                        </div>
-                                        <div class="row my-2">
-                                            <div class="col-auto">
-                                                <div class="input-group BMI">
-                                                    <input type="number" class="form-control" value="41.3" min="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- diet-type -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="Diet">Enter client's Diet</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="Diet">(required)</label>
-                                        </div>
-                                        <div class="row my-2">
-                                            <div class="col-auto">
-                                                <div class="input-group Diet">
-                                                    <input type="text" class="form-control" value="Custom - made">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <div class="col-6 my-2">
-                                    <!-- Age -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="Age">Enter user's age</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="Age">(required)</label>
-                                        </div>
-                                        <div class="row my-2">
-                                            <div class="col-auto">
-                                                <div class="input-group Age">
-                                                    <input type="number" class="form-control" value="27" min="1">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text">years old</span>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- Weight -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="Weight">Enter user's weight</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="Weight">(required)</label>
-                                        </div>
-                                        <div class="row my-2">
-                                            <div class="col-auto">
-                                                <div class="input-group Weight">
-                                                    <input type="number" class="form-control" value="103" min="1">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text">kg</span>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group fullname">
+                                                        <input type="text" class="form-control" value="Peper Ashley">
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
-                                        
-                                    </div>
-                                    <!-- Height -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="Height">Enter user's height</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="Height">(required)</label>
-                                        </div>
+                                        <!-- email -->
                                         <div class="row my-2">
                                             <div class="col-auto">
-                                                <div class="input-group Height">
-                                                    <input type="number" class="form-control" value="159" min="1">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text">cm</span>
+                                                <label for="E-mail">Enter user's Email</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="E-mail">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group E-mail">
+                                                        <input type="email" class="form-control" value="pashley@gmail.com">
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
+                                            
                                         </div>
-                                        
+                                        <!-- BMI -->
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="BMI">Enter user's BMI</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="BMI">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group BMI">
+                                                        <input type="number" class="form-control" value="41.3" step="0.1" min="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <!-- diet-type -->
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="Diet">Enter client's Diet</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="Diet">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group Diet">
+                                                        <input type="text" class="form-control" value="Custom - made">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
                                     
-                                    <!-- Pregnant -->
-                                    <div class="row my-2">
-                                        <div class="col-auto">
-                                            <label for="Age">Is user pregnant</label>
-                                        </div>
-                                        <div class="col-auto">
-                                            <label class="text-danger"for="Age">(required)</label>
-                                        </div>
+                                    <div class="col-6 my-2">
+                                        <!-- Age -->
                                         <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="Age">Enter user's age</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="Age">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group Age">
+                                                        <input type="number" class="form-control" value="27" min="1">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">years old</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <!-- Weight -->
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="Weight">Enter user's weight</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="Weight">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group Weight">
+                                                        <input type="number" class="form-control" value="103" min="1">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">kg</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <!-- Height -->
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="Height">Enter user's height</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="Height">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="input-group Height">
+                                                        <input type="number" class="form-control" value="159" min="1">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">cm</span>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
                                             
                                         </div>
                                         
+                                        <!-- Pregnant -->
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <label for="Age">Is user pregnant</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="text-danger"for="pregnant">(required)</label>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
+                                        
                                 </div>
                                 
-                        </div>
+                            </div>
+                            <!-- diet info -->
+                            <div id="white_parg" class="container-fluid my-3">
+                                <div class="row">
+                                
+                                    <!-- title -->
+                                    <div  class="row p-4">
+                                        <div id="titleSize"class="col-auto">Diet menu</div>
+                                    </div>
+                                    
+                                    <!-- date -->
+                                    <div class="row my-3">
+                                        <div class="col-1"></div>
+                                        <div class="col-5 my-2">
+                                            <label for="date">Choose a start date</label>
+                                            <div class="col-8">
+                                                <div class="input-group date" id="datepicker">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-append">
+                                                        <span class="input-group-text bg-white">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <!-- 4 questions -->
+                                    <div class="col-5 my-2 ">
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Calories">Calories per day</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label for="Calories" style="color: red;">(required)</label>
+                                            </div>  
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <div class="input-group Calories">
+                                                    <input type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">kCal</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Protein">Protein per day</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label for="Protein" style="color: red;">(required)</label>
+                                            </div>  
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <div class="input-group Protein">
+                                                    <input type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">grams</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Health">Health labels</label>
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck1" name="Health"autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck1">Peanuts Free</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck2"name="Health" autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck2">Pork Free</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck3"name="Health" autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck3">Gluten Free</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck4" name="Health"autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck4">Vegan</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck5" name="Health"autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck5">Vegetarian</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck6"name="Health" autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck6">Fish Free</label>
+                                            </div>
+                                            <div class="col-auto p-1">
+                                                <input type="checkbox" class="btn-check" id="btncheck7" name="Health"autocomplete="off">
+                                                <label class="btn btn-outline-secondary" for="btncheck7">Eggs Free</label>
+                                            </div>
+                                            
+                                        </div>
 
-                        <div id="white_parg" class="container-fluid">
+
+                                    </div>
+                                    <div class="col-6 my-2">
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Fats">Fats per day</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label for="Fats" style="color: red;">(required)</label>
+                                            </div>  
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-auto">
+                                                <div class="input-group Fats">
+                                                    <input type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">grams</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Carbohydrates">Carbohydrates per day (grams)</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label for="Carbohydrates" style="color: red;">(required)</label>
+                                            </div>  
+                                        </div>
+                                        <div class="row mt-2 ">
+                                            <div class="col-auto">
+                                                <div class="input-group Carbohydrates">
+                                                    <input type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">grams</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-auto">
+                                                <label for="Food">Food to avoid</label>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2 ">
+                                            <div class="col-auto">
+                                                <div class="input-group Food">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
                             
-                            <!-- date -->
-                            <div class="row my-3">
-                                <label for="date" class="col-auto col-form-label">Choose a start date</label>
-                                <div class="col-4">
-                                    <div class="input-group date" id="datepicker">
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-append">
-                                            <span class="input-group-text bg-white">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 4 questions -->
-                            <div class="row my-3">
-                                <div class="col-auto">
-                                    <label for="Calories">Calories per day (kCal)</label>
-                                </div>
-                                <div class="col-auto">
-                                    <label for="Calories" style="color: red;">(required)</label>
-                                </div>  
-                            </div>
-                            <div class="row my-2">
-                                <div class="col">
-                                    <div class="input-group Calories">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-3">
-                                <div class="col-auto">
-                                    <label for="Protein">Protein per day (grams)</label>
-                                </div>
-                                <div class="col-auto">
-                                    <label for="Protein" style="color: red;">(required)</label>
-                                </div>  
-                            </div>
-                            <div class="row my-2">
-                                <div class="col">
-                                    <div class="input-group Protein">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-3">
-                                <div class="col-auto">
-                                    <label for="Fats">Fats per day (grams)</label>
-                                </div>
-                                <div class="col-auto">
-                                    <label for="Fats" style="color: red;">(required)</label>
-                                </div>  
-                            </div>
-                            <div class="row my-2">
-                                <div class="col">
-                                    <div class="input-group Fats">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-3">
-                                <div class="col-auto">
-                                    <label for="Carbohydrates">Carbohydrates per day (grams)</label>
-                                </div>
-                                <div class="col-auto">
-                                    <label for="Carbohydrates" style="color: red;">(required)</label>
-                                </div>  
-                            </div>
-                            <div class="row mt-2 mb-4">
-                                <div class="col">
-                                    <div class="input-group Carbohydrates">
-                                        <input type="text" class="form-control">
-                                    </div>
                                 </div>
                             </div>
                             
-                        
-                            
-                        </div>
-                    </form>
+                        </form>
 
                     </div>
                 </div>
