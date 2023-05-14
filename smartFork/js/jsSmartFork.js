@@ -1,3 +1,4 @@
+//------------------------ dark theme ------------------------------------
 window.onload = () => {
     btn = document.getElementById('btnSwitch');
     logo = document.getElementById('logo');
@@ -23,7 +24,8 @@ window.onload = () => {
     
     
     })
-    // ------------------------------------------------------------------- index2
+    
+    // ------------------------ charts ------------------------------------
     var ctxP = document.getElementById("pieChart").getContext('2d');
     var myPieChart = new Chart(ctxP, {
       type: 'pie',
@@ -62,8 +64,8 @@ window.onload = () => {
           }
         },
       });
-    // ------------------------------------------------------------------- index3
-    
+
+      // ------------------------ date picker ------------------------------------
     $(function(){
         $('#datepicker').datepicker();
     });
