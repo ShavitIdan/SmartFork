@@ -2,9 +2,20 @@
     margin: 0;
     padding: 0;
 }
-#logo {
-    
+#main {
+    height: 100vh;
 }
+#logo {
+    background-image: url("../images/SmartForkIcon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 31px 65px 31px 65px;
+}
+.logoContainer {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .nav-pills li a:hover {
     background-color: #8583FF;
     color: white;
