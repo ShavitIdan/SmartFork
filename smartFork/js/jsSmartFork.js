@@ -65,10 +65,10 @@ window.onload = () => {
         },
       });
 
-      // ------------------------ date picker ------------------------------------
-    $(function(){
-        $('#datepicker').datepicker();
-    });
+    
 };
 
-   
+     // ------------------------ date picker ------------------------------------
+     $(function(){
+      $('#datepicker').datepicker();
+  });

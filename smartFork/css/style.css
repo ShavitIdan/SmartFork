@@ -78,7 +78,7 @@ span,label,a {
     font-family: 'DM Sans';
 }
 label{
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'DM Sans';
 }
 a{
@@ -102,4 +102,7 @@ a{
 }
 #submit:hover{
     background-color: green;
+}
+#btnProfile:hover{
+    background-color: #8583FF;
 }

@@ -87,7 +87,7 @@
                     </div>
                     <div class="container-fluid border rounded mt-4">
                         <!-- top main -->
-                        <form>
+                        <form action="http://localhost/smartFork/index3.php" name="orderForm" method="get">
                             <div class="row p-4">
                                 <div class="col-auto">
                                     <span id="titleSize" class="text-dark">New User</span>
@@ -130,7 +130,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group fullname">
-                                                        <input type="text" class="form-control" value="Peper Ashley">
+                                                        <input type="text" class="form-control" value="Peper Ashley" name="fullName">
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,7 +147,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group E-mail">
-                                                        <input type="email" class="form-control" value="pashley@gmail.com">
+                                                        <input type="email" class="form-control" value="pashley@gmail.com" name="mail">
                                                     </div>
                                                 </div>
                                             </div>
@@ -164,7 +164,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group BMI">
-                                                        <input type="number" class="form-control" value="41.3" step="0.1" min="1">
+                                                        <input type="number" class="form-control" value="41.3" step="0.1" min="1" name="BMI">
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,7 +181,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group Diet">
-                                                        <input type="text" class="form-control" value="Custom - made">
+                                                        <input type="text" class="form-control" value="Custom - made" name="diet">
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,7 +201,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group Age">
-                                                        <input type="number" class="form-control" value="27" min="1">
+                                                        <input type="number" class="form-control" value="27" min="1" name="age">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">years old</span>
                                                         </div>
@@ -222,7 +222,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group Weight">
-                                                        <input type="number" class="form-control" value="103" min="1">
+                                                        <input type="number" class="form-control" value="103" min="1" name="weight">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">kg</span>
                                                         </div>
@@ -242,7 +242,7 @@
                                             <div class="row my-2">
                                                 <div class="col-auto">
                                                     <div class="input-group Height">
-                                                        <input type="number" class="form-control" value="159" min="1">
+                                                        <input type="number" class="form-control" value="159" min="1" name="height">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">cm</span>
                                                         </div>
@@ -299,7 +299,7 @@
                                             <label for="date">Choose a start date</label>
                                             <div class="col-8">
                                                 <div class="input-group date" id="datepicker">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="date">
                                                     <span class="input-group-append">
                                                         <span class="input-group-text bg-white">
                                                             <i class="fa fa-calendar"></i>
@@ -324,7 +324,7 @@
                                         <div class="row my-2">
                                             <div class="col-auto">
                                                 <div class="input-group Calories">
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" class="form-control" name="Calories">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">kCal</span>
                                                     </div>
@@ -342,7 +342,7 @@
                                         <div class="row my-2">
                                             <div class="col-auto">
                                                 <div class="input-group Protein">
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" class="form-control" name="Protein">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">grams</span>
                                                     </div>
@@ -400,7 +400,7 @@
                                         <div class="row my-2">
                                             <div class="col-auto">
                                                 <div class="input-group Fats">
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" class="form-control" name="Fats">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">grams</span>
                                                     </div>
@@ -409,7 +409,7 @@
                                         </div>
                                         <div class="row my-3">
                                             <div class="col-auto">
-                                                <label for="Carbohydrates">Carbohydrates per day (grams)</label>
+                                                <label for="Carbohydrates">Carbohydrates per day</label>
                                             </div>
                                             <div class="col-auto">
                                                 <label for="Carbohydrates" style="color: red;">(required)</label>
@@ -418,7 +418,7 @@
                                         <div class="row mt-2 ">
                                             <div class="col-auto">
                                                 <div class="input-group Carbohydrates">
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" class="form-control" name="Carbohydrates">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">grams</span>
                                                     </div>
@@ -433,7 +433,7 @@
                                         <div class="row mt-2 ">
                                             <div class="col-auto">
                                                 <div class="input-group Food">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="cancelFood">
                                                 </div>
                                             </div>
                                         </div>
