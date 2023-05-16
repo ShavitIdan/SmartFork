@@ -139,10 +139,6 @@ a{
 #white_parg{
     background-color: white;
 }
-
-#titleSize{
-    font-size: 24px;
-}
 #submit:hover{
     background-color: green;
 }
