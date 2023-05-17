@@ -22,10 +22,27 @@
               <h2>Diet start at      :  $_GET[date]</h2>
               <h2>Calories per day   :  $_GET[Calories]</h2>
               <h2>Protein per day    :  $_GET[Protein]</h2>
-              <h2>Health labels      :  $_GET[Health]</h2>
               <h2>Fats per day       :  $_GET[Fats]</h2>
               <h2>Carbohydrates per day :  $_GET[Carbohydrates]</h2>
               <h2>Food to avoid      :  $_GET[cancelFood]</h2>";
+        if (isset($_GET['Health'])) {
+            $selectedHealth = $_GET['Health'];
+            echo "<h2>Selected Health Options:</h2>";
+            if (is_array($selectedHealth)) {
+                foreach ($selectedHealth as $option) {
+                    echo "<p>$option</p>";
+                }
+            }else {
+                echo "<p>$selectedHealth</p>";
+            }
+        }else {
+            echo "<h2> Health labels      :No health options selected.</h2>";
+        }       
+
+
+
+
+           
     ?>
 </body>
 </html>

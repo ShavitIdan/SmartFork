@@ -91,10 +91,7 @@
 		<div class="container pt-4">
             <div class="row p-2 ">
                 <!-- bread -->
-                <div class="col-4 my-2 d-none d-sm-block d-flex">
-                    <a href="index.html" class="fs-6  d-none d-md-inline-block d-lg-none text-black">Home/</a>
-                    <a href="index.html" class="fs-6 d-none d-md-inline-block d-lg-none text-black">Users/</a>
-                    <a href="#" class="fs-6 d-none d-md-inline-block d-lg-none selected">Peper Ashley</a>
+                <div class="col-4 my-2 d-none d-sm-block d-md-block d-flex">
                     <a href="index.html" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
                     <a href="index.html" class="fs-4 d-none d-lg-inline-block text-black">Users/</a>
                     <a href="#" class="fs-4 d-none d-lg-inline-block selected">Peper Ashley</a>
@@ -105,17 +102,45 @@
                 <!-- profile -->
                 <div id="white_parg" class="row mb-4">
                     <div class="col-3 my-2">
-                        <img class="pepperProfile" src="images/Peper profile.png"> 
+                        <img id="pepperProfile" src="images/Peper profile.png"> 
+                            <!-- ipad -->
+                        <div class="row  d-none d-md-block d-lg-none  ">
+                            <div class="col-1 m-3">
+                                <button id="btnProfile" type="button" class="btn light-blue">
+                                    <a href="#" class="text-dark"  >Edit profile</a>
+                                </button>
+                            </div>
+                            <div class="col-auto m-3">
+                                <button id="btnProfile" type="button" class="btn light-blue">
+                                    <a href="#" class="text-dark" >Edit diet</a>
+                                </button>
+                            </div>                              
+                        </div>
                     </div>
-                    <div class="col-3 mt-3">
+                    <!-- desktop and ipad -->
+                    <div class="col-3 mt-3 d-none d-sm-block">
                         <div class="row">
                             <span class="fs-3 text-dark">Peper Ashley</span>
                             <span class="mt-2 text-dark" style="font-size: 14px;">pashley@gmail.com</span>
                             <div class="row mt-5"></div>
-                            <span class="mt-3 text-dark" style="font-size: 15px;">Next appoinment: 09:30 am 14 MAR 2023 </span>
+                            <span class="mt-3 text-dark">Next appoinment: 09:30 am 14 MAR 2023 </span>
                         </div>
                     </div>
-                    <div class="col-2 mt-3">
+                    <!-- iphone -->
+                    <div class="col-auto d-block d-sm-none m-1">
+                        <span class="fs-3 text-dark">Peper Ashley</span>
+                        <div class="row">
+                            <span class="mt-2 text-dark" style="font-size: 14px;">pashley@gmail.com</span>
+                        </div>
+                    </div>
+                    <!-- iphone -->
+                    <div class="row d-block d-sm-none my-3">
+                        <div class="row">
+                            <span class="mt-3 text-dark">Next appoinment: 09:30 am 14 MAR 2023 </span>
+                        </div>
+                    </div>
+                    <!-- desktop and ipad -->
+                    <div class="col-2 mt-3 d-none d-sm-block">
                         <div class="row">
                             <span class="fs-3 text-dark">Details</span>
                             <span class="mt-1 text-dark">Weight: 103 kg</span>
@@ -124,7 +149,22 @@
                             <span class="mt-1 text-dark">BMI: 41.3</span>
                         </div>
                     </div>
-                    <div class="col-3 mt-5">
+                    <!-- iphone -->
+                    <div class="row d-block d-sm-none my-3">
+                        <div class="row">
+                            <span class="fs-3 text-dark">Details</span>
+                            <span class="mt-1 text-dark">Weight: 103 kg</span>
+                            <span class="mt-1 text-dark">Height: 159 cm</span>
+                            <span class="mt-1 text-dark">Age: 27</span>
+                            <span class="mt-1 text-dark">BMI: 41.3</span>
+                            <span class="mt-3 text-dark">Pregnant: No</span>
+                            <span class="mt-1 text-dark">Sport: 3-4</span>
+                            <span class="mt-1 text-dark">Diet: Custom- made</span>
+                            <span class="mt-1 text-dark">Started at: 12.12.2022</span>
+                        </div>
+                    </div>
+                    <!-- desktop and ipad -->
+                    <div class="col-3 mt-5 d-none d-sm-block">
                         <div class="row">
                             <span class="mt-3 text-dark">Pregnant: No</span>
                             <span class="mt-1 text-dark">Sport: 3-4</span>
@@ -132,7 +172,21 @@
                             <span class="mt-1 text-dark">Started at: 12.12.2022</span>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <!-- iphone -->
+                    <div class="row d-block d-sm-none my-3">
+                        <div class="row my-2">
+                            <button id="btnProfile" type="button" class="btn light-blue">
+                                <a href="#" class="text-dark"  >Edit profile</a>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <button id="btnProfile" type="button" class="btn light-blue">
+                                <a href="#" class="text-dark" >Edit diet</a>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- desktop -->
+                    <div class="col-1 d-none d-xl-block d-lg-block">
                         <div class="row mt-5"></div>
                         <div class="row mt-3">
                             <button id="btnProfile" type="button" class="btn light-blue">
@@ -140,21 +194,22 @@
                             </button>
                             
                         </div>
-                        <div class="row my-2">
+                        <div class="row my-2 ">
                             <button id="btnProfile" type="button" class="btn light-blue">
                                 <a href="#" class="text-dark" >Edit diet</a>
                             </button>
                         </div>
                         
                     </div>
+                    
                 </div>
                 <!-- notes -->
                 <div id="white_parg" class="row mt-5 mb-4">
                     <div class="col mb-3">
                         <div class="row">
                             <span class="fs-3 my-2 text-dark">Notes</span>
-                            <span class="text-dark"style="font-size: 18px; ">Hi Ashley, I'm noting everything I've told you in our meeting.</span>
-                            <span class="text-dark"style="font-size: 18px; ">Goal: lose weight as fast as possible, drink 6 - 7 cups of water daily, 
+                            <span class="text-dark">Hi Ashley, I'm noting everything I've told you in our meeting.</span>
+                            <span class="text-dark">Goal: lose weight as fast as possible, drink 6 - 7 cups of water daily, 
                                 as far as calories go: 1800 calories separate to 594 cal fat (nuts, salmon, etc.),  
                                 324 cal of protein (eggs, chicken) and 918 cal of carbs (quinoa, oatmeal).
                             </span>
@@ -190,7 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="white_parg" class="row ">
+                <div id="white_parg" class="row d-none d-xl-block d-lg-block d-md-block">
                         <div class="col">
                             <div class="row">
                                 <span id="titleSize" class="my-2 text-dark">Analytics</span>
@@ -205,6 +260,17 @@
                             </div>
                         </div>
                 </div>
+                <!-- iphone -->
+                <div id="white_parg" class="row d-block d-sm-none">
+                    <div class="row">
+                        <span id="titleSize" class="my-2 text-dark">Analytics</span>
+                        <canvas id="pieChart"></canvas>
+                    </div>   
+                    <div class="container-fluid d-inline-block d-md-none sos">
+                        <a href="#"><img src="images/SOS.png"></a>
+                    </div>         
+                </div>
+            </div>
         </div>
     </main>
 
