@@ -25,6 +25,7 @@
               <h2>Fats per day       :  $_GET[Fats]</h2>
               <h2>Carbohydrates per day :  $_GET[Carbohydrates]</h2>
               <h2>Food to avoid      :  $_GET[cancelFood]</h2>";
+
         if (isset($_GET['Health'])) {
             $selectedHealth = $_GET['Health'];
             echo "<h2>Selected Health Options:</h2>";
