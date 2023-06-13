@@ -201,333 +201,68 @@
 							<span class="nav-link text-darker"><b>Diet</b></span>
 						</div>
 					</div>
-					<!-- pepper -->
-					<a href="user.html?userId=1" class="row p-3 person dietCM d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/peper.png">
-								</div>
-							
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker ">Peper Ashley</span>
-									<span class="text-grey">pashley@gmail.com</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">103</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">159</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">27</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/mdi_graph-line.png">
-							<span class="strong-red">41.3</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Custom made</span>
-						</div>
-					</a>
-					<!-- Rafaella -->
-					<a href="user.html?userId=2" class="row p-3 person dietCM d-flex justify-content-around">
-						
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/Rafaella.png">
-								</div>
-		
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker ">Rafaella Mendes</span>
-									<span class="text-grey">RafaellaM@gmail.com</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">43</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">163</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">22</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/mdi_graph-line.png">
-							<span class="strong-red">16.4</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Custom made</span>
-						</div>
-					</a>
-					<!-- Elizeu -->
-					<a href="user.html?userId=3" class="row p-3 person dietCarn d-flex justify-content-around">
-						
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/Elizeu.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker">Elizeu Dias</span>
-									<span class="text-grey">Elizeudias@gmail.com</span>
-								</div>
-							</div>
-						   
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">80</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">171</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">34</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/graph orange.png">
-							<span class="strong-orange">27.4</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Carnivore</span>
-						</div>
-					</a>
-					<!-- Moshe -->
-					<a href="user.html?userId=4" class="row p-3 person dietLC d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/moshe.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker ">Moshe Rahamim</span>
-									<span class="text-grey">Moshe123@gmail.com</span>
-								</div>
-							</div>
-							
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">70</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">160</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">41</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/graph orange.png">
-							<span class="strong-orange">27</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Low-Carbs</span>
-						</div>
-					</a>
-					<!-- Ziv -->
-					<a href="user.html?userId=5" class="row p-3 person dietVG d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/ziv.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker">Ziv Itzhak</span>
-									<span class="text-grey">zQueen@gmail.com</span>
-								</div>
-							</div>
-							
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">90</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">155</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">36</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/mdi_graph-line.png">
-							<span class="strong-red">37.9</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Veganism</span>
-						</div>
-					</a>
-					 <!-- Nir -->
-					 <a href="user.html?userId=6" class="row p-3 person dietLC d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/nir.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker ">Nir Alves</span>
-									<span class="text-grey">nnnira@gmail.com</span>
-								</div>
-							</div>
-							
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">65</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">165</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">29</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/green-grapgh.png">
-							<span class="strong-green">23.9</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Low- Carbs</span>
-						</div>
-					</a>
-					<!-- Own -->
-					<a href="user.html?userId=7" class="row p-3 person dietCM d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center">   
-								<div class="col-auto p-1">
-									<img src="images/own.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker">Own Boateng</span>
-									<span class="text-grey">Boateng@gmail.com</span>
-								</div>
-							</div>
-							
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">92</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">180</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">52</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/graph orange.png">
-							<span class="strong-orange">28.4</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Custom-made</span>
-						</div>
-					</a>
-					<!-- ian -->
-					<a href="user.html?userId=8" class="row p-3 person dietCM d-flex justify-content-around">
-						<div class="col-3 ml-2 ">
-							<div class="d-flex align-items-center ">   
-								<div class="col-auto p-1">
-									<img src="images/ian.png">
-								</div>
-								<div class="col-auto mx-2">
-									<span class="nav-link text-darker">Ian Dooley</span>
-									<span class="text-grey">Ian.Dooley@gmail.com</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<span class="text-grey">70</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
-							<span class="text-grey">162</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block	">
-							<span class="text-grey">19</span>
-						</div>
-						<div class="col-2 ml-2 d-flex align-items-center">
-							<img src="images/graph orange.png">
-							<span class="strong-orange">26.7</span>
-						</div>
-						<div class="col-1 ml-2 d-flex align-items-center">
-							<span class="text-grey">Custom-made</span>
-						</div>
-					</a>
-				</div>
-                <!-- Desktop main -->
+					<?php
+						while($row = mysqli_fetch_assoc($result)){
+							$_bmi=$row["patient_bmi"];
+							echo '<a href="user.php?patient_id='. $row["patient_id"] .'" class="row p-3 person dietCM d-flex justify-content-around">
+									<div class="col-3 ml-2 ">
+										<div class="d-flex align-items-center">   
+											<div class="col-auto p-1">
+												<img src="'.$row["patient_img"].'">
+											</div>
+										
+											<div class="col-auto mx-2">
+												<span class="nav-link text-darker ">' . $row["patient_full_name"] .'</span>
+												<span class="text-grey">' . $row["patient_email"]. '</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-2 ml-2 d-flex align-items-center">
+										<span class="text-grey">'.$row["patient_weight"] .'</span>
+									</div>
+									<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
+										<span class="text-grey">'.$row["patient_height"] .'</span>
+									</div>
+									<div class="col-2 ml-2 d-flex align-items-center d-none d-lg-block">
+										<span class="text-grey">'.$row["patient_age"] .'</span>
+									</div>';
+							if($_bmi > 35 || $_bmi < 20 ){
+								echo'<div class="col-2 ml-2 d-flex align-items-center">
+										<img src="images/mdi_graph-line.png">
+										<span class="strong-red">'.$row["patient_bmi"] .'</span>
+									</div>
+									<div class="col-1 ml-2 d-flex align-items-center">
+										<span class="text-grey">'.$row["patient_diet"] .'</span>
+									</div>
+								</a>';
+							}
+							else if($_bmi < 35 && $_bmi > 25  ){
+								echo'<div class="col-2 ml-2 d-flex align-items-center">
+										<img src="images/graph orange.png">
+										<span class="strong-orange">'.$row["patient_bmi"] .'</span>
+									</div>
+									<div class="col-1 ml-2 d-flex align-items-center">
+										<span class="text-grey">'.$row["patient_diet"] .'</span>
+									</div>
+								</a>';								
+							}
+							else{
+								echo'<div class="col-2 ml-2 d-flex align-items-center">
+										<img src="images/green-grapgh.png">
+										<span class="strong-green">'.$row["patient_bmi"] .'</span>
+									</div>
+									<div class="col-1 ml-2 d-flex align-items-center">
+										<span class="text-grey">'.$row["patient_diet"] .'</span>
+									</div>
+								</a>';
+							}
+						}
+					?>
 
-                <!-- Mobile main -->
-                <div class="g-0 container-fluid d-inline-block d-md-none">
-                    <table class="table border">
-                        <thead>
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Diet</th>
-                            <th scope="col">BMI</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr onclick="location.href='user.html?userId=1';">
-                            <a href="#">
-                            <td scope="row"><img src="images/peper.png"></td>
-                            <td>Pepper Ashley</td>
-                            <td>Custom-made</td>
-                            <td>41.3</td>
-                            </a>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=2';">
-                            <td scope="row"><img src="images/Rafaella.png"></td>
-                            <td>Rafaella Mandes</td>
-                            <td>Custom-made</td>
-                            <td>16.4</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=3';">
-                            <td scope="row"><img src="images/Elizeu.png"></td>
-                            <td>Elzeu Dias</td>
-                            <td>Carnivore</td>
-                            <td>27.4</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=4';">
-                            <td scope="row"><img src="images/moshe.png"></td>
-                            <td>Moshe Rahamim</td>
-                            <td>Low_Carbs</td>
-                            <td>27</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=5';">
-                            <td scope="row"><img src="images/ziv.png"></td>
-                            <td>Ziv Itzhak</td>
-                            <td>Veganism</td>
-                            <td>37.9</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=6';">
-                            <td scope="row"><img src="images/nir.png"></td>
-                            <td>Nir Alves</td>
-                            <td>Low_Carbs</td>
-                            <td>23.9</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=7';">
-                            <td scope="row"><img src="images/own.png"></td>
-                            <td>Own Boateng</td>
-                            <td>Custom-made</td>
-                            <td>28.4</td>
-                          </tr>
-                          <tr onclick="location.href='user.html?userId=8';">
-                            <td scope="row"><img src="images/ian.png"></td>
-                            <td>Ian Dooley</td>
-                            <td>Custom-made</td>
-                            <td>26.7</td>
-                          </tr>
-						  <tr onclick="location.href='user.html?userId=9';">
-                            <td scope="row"><img src="images/Elizeu.png"></td>
-                            <td>Elzeu Dias</td>
-                            <td>Carnivore</td>
-                            <td>27.4</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-				<div class="container-fluid d-inline-block d-md-none sos">
-					<a href="#"><img src="images/SOS.png"></a>
+					
+					
+					
 				</div>
-                <!-- Mobile main -->
 			</div>
 		</div>
 	</main>
