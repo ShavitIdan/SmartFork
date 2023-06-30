@@ -14,10 +14,19 @@
     $query  = "SELECT * FROM tbl_205_patients";
     $result = mysqli_query($connection, $query);
 
+	
+
     if(!$result) {
         die("DB query failed.");
     }
 
+    $result2 = mysqli_query($connection, $query);
+
+	
+
+    if(!$result2) {
+        die("DB query failed.");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -128,7 +137,7 @@
 					<div class=" d-none d-md-block col-md-2"></div> 
                     <div class="col-auto d-flex ">
                         <a href="#" class="px-2"><i class="fa fa-trash-o"></i></a>
-                        <a href="newUser.html" class="px-2"><i class="fa fa-plus" style="font-size:24px"></i></a>
+                        <a href="newUser.php" class="px-2"><i class="fa fa-plus" style="font-size:24px"></i></a>
 						<ul class="navbar-nav ">
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center px-1 d-inline-block d-lg-none" href="#"
@@ -137,16 +146,17 @@
 									<path d="M3.5 3.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 12.293V3.5zm4 .5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1h-1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1h-3zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1h-5zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5z"/>
 									</svg>
 								</a>
-								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-									<li>
-									<a class="dropdown-item fs-6" href="#">Name</a>
+								<!-- iphone -->
+								<ul class="dropdown-menu dropdown-menu-end json-menu" aria-labelledby="navbarDropdownMenuLink">
+									<!-- <li>
+										<a class="dropdown-item fs-6" href="#">Name</a>
 									</li>
 									<li>
 									<a class="dropdown-item fs-6" href="#">Weight</a>
 									</li>
 									<li>
 									<a class="dropdown-item fs-6" href="#">BMI</a>
-									</li>
+									</li> -->
 								</ul>
 							</li>
 						</ul>
@@ -162,17 +172,13 @@
 											sorting by 
 										</button>
 									</a>
-									<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-										<li>
-										<a class="dropdown-item fs-6" href="#">Name</a>
-										</li>
-										<li>
-										<a class="dropdown-item fs-6" href="#">Weight</a>
-										</li>
-										<li>
-										<a class="dropdown-item fs-6" href="#">BMI</a>
-										</li>
+									<!-- desk -->
+									<ul class="dropdown-menu dropdown-menu-end" id="json-menu" aria-labelledby="navbarDropdownMenuLink">
+										<!-- <li class="dropdown-item fs-6">Name</li>
+										<li class="dropdown-item fs-6">Weight</li>
+										<li class="dropdown-item fs-6">BMI</li> -->
 									</ul>
+									
 								</li>
 							</ul>
 						</div>
@@ -204,11 +210,13 @@
 					<?php
 						while($row = mysqli_fetch_assoc($result)){
 							$_bmi=$row["patient_bmi"];
+							$img = $row["patient_img"];
+							if(!$img) $img = "images/default-pic-list.png";
 							echo '<a href="user.php?patient_id='. $row["patient_id"] .'" class="row p-3 person dietCM d-flex justify-content-around">
 									<div class="col-3 ml-2 ">
 										<div class="d-flex align-items-center">   
 											<div class="col-auto p-1">
-												<img src="'.$row["patient_img"].'">
+												<img src="'.$img.'">
 											</div>
 										
 											<div class="col-auto mx-2">
@@ -259,14 +267,56 @@
 						}
 					?>
 
-					
-					
-					
 				</div>
+				<div class="g-0 container-fluid d-inline-block d-md-none">
+                    <table class="table border">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Diet</th>
+                            <th scope="col">BMI</th>
+                          </tr>
+						  </thead>
+                        <tbody>
+							<?php
+								while($row2 = mysqli_fetch_assoc($result2)){
+											$_bmi=$row2["patient_bmi"];
+											$img = $row2["patient_img"];
+												if(!$img) $img = "images/default-pic-list.png";
+											echo '
+											<tr onclick="location.href=\'user.php?patient_id=' . $row2["patient_id"] . '\'">
+													<td scope="row"><img src="'.$img.'"></td>
+													<td>' . $row2["patient_full_name"] .'</td>
+													<td>'.$row2["patient_diet"] .'</td>';
+													if($_bmi > 35 || $_bmi < 20 ){
+														echo'<td class="strong-red" >'.$row2["patient_bmi"] .'</td>';
+													}
+													else if($_bmi < 35 && $_bmi > 25  ){
+														echo'<td class="strong-orange" >'.$row2["patient_bmi"] .'</td>';					
+													}
+													else{
+														echo'<td class="strong-green" >'.$row2["patient_bmi"] .'</td>';
+													}
+											echo'
+											 </tr>';
+								}
+							?>
+                        </tbody>
+                      </table>
+                </div>
+				<div class="container-fluid d-inline-block d-md-none sos">
+					<a href="#"><img src="images/SOS.png"></a>
+				</div>
+                <!-- Mobile main -->
+
+
+
+
 			</div>
 		</div>
 	</main>
-  <!--Main layout-->
+  	<!--Main layout-->
 	<script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 	<script src="js/jsSmartFork.js"></script>

@@ -16,6 +16,17 @@
         $row = mysqli_fetch_assoc($result); //there is only 1 item with id=X
     }
     else die("DB query failed.");
+
+
+
+    
+    $result2 = mysqli_query($connection, $query);
+
+	
+
+    if(!$result2) {
+        die("DB query failed.");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,8 +122,8 @@
             <div class="row p-2 ">
                 <!-- bread -->
                 <div class="col-4 my-2 d-none d-sm-block d-md-block d-flex">
-                    <a href="#" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
-                    <a href="index.html" class="fs-4 d-none d-lg-inline-block text-black">Users/</a>
+                    <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
+                    <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Users/</a>
                     <?php
                         echo '<a href="#" class="fs-4 d-none d-lg-inline-block selected">' . $row["patient_full_name"] .'</a>';
                     ?>
@@ -240,11 +251,10 @@
                     <div class="col mb-3">
                         <div class="row">
                             <span class="fs-3 my-2 text-dark">Notes</span>
-                            <span class="text-dark">Hi Ashley, I'm noting everything I've told you in our meeting.</span>
-                            <span class="text-dark">Goal: lose weight as fast as possible, drink 6 - 7 cups of water daily, 
-                                as far as calories go: 1800 calories separate to 594 cal fat (nuts, salmon, etc.),  
-                                324 cal of protein (eggs, chicken) and 918 cal of carbs (quinoa, oatmeal).
-                            </span>
+                            <?php
+                                echo '<span class="text-dark">' . $row["patient_note"]. '</span>';
+                            ?>
+                            
                         </div>
                     </div>
                 </div>

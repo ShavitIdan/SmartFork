@@ -61,6 +61,8 @@ window.onload = () => {
         },
       });
 
+
+    
 };
 
 // ------------------------ date picker ------------------------------------
@@ -82,3 +84,24 @@ checkboxes.forEach(checkbox => {
     }
   });
 });
+
+
+
+// ------------------------ json ------------------------------------
+// Update the form with dynamic content
+// function updateForm(data) {
+//   const ul = document.getElementById('json-menu');
+
+//   for (const key in data) {
+//     const li = document.createElement('li');
+//     li.className = 'dropdown-item fs-6';
+//     li.innerHTML = data[key];
+//     ul.appendChild(li);
+//   }
+// }
+
+// // Fetch the JSON data
+// fetch("data/option.json")
+//   .then(response => response.json())
+//   .then(data => updateForm(data));
+ 
