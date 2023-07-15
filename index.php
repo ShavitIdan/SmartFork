@@ -13,20 +13,29 @@
     // get all data from DB
     $query  = "SELECT * FROM tbl_205_patients";
     $result = mysqli_query($connection, $query);
-
-	
-
     if(!$result) {
         die("DB query failed.");
     }
 
+
+	// iphone
     $result2 = mysqli_query($connection, $query);
-
-	
-
     if(!$result2) {
         die("DB query failed.");
     }
+
+
+
+	// STILL NOT WORKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// $_deleteEmail = isset($_POST["deletemail"]);
+	// $query2  = "DELETE FROM tbl_205_patients WHERE patient_email = $_deleteEmail";
+	// $result3 = mysqli_query($connection, $query2);
+    // if(!$result3) {
+    //     die("DB query failed.");
+    // }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -136,8 +145,40 @@
                     <button class="searchBtn btn border my-2 my-sm-0 d-inline-block d-lg-none shadow-none" type="submit"><i class="fa fa-search"></i></button>
 					<div class=" d-none d-md-block col-md-2"></div> 
                     <div class="col-auto d-flex ">
-                        <a href="#" class="px-2"><i class="fa fa-trash-o"></i></a>
-                        <a href="newUser.php" class="px-2"><i class="fa fa-plus" style="font-size:24px"></i></a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa fa-trash-o"></i></button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel">Which patient you want to delete? </h1>
+									<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+								</div>
+								<div class="modal-body">
+									<form action="#" name="deletePatient" method="post" d-none d-sm-block>
+										<label for="E-mail">Enter user's Email</label>
+										<input type="email" class="form-control"  name="deletemail" required>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-danger">Delete</button>
+								</div>
+								</div>
+							</div>
+						</div>						
+						
+
+
+
+
+
+
+
+
+						
+						<a href="newUser.php" ><button type="button" class="btn btn-primary "><i class="fa fa-plus"></i></button></a>						
 						<ul class="navbar-nav ">
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center px-1 d-inline-block d-lg-none" href="#"
@@ -163,8 +204,7 @@
 						<div>
 							<ul class="navbar-nav ">
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-										id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+									<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
 										<button class="btn btn-outline-secondary dropdown-toggle d-none d-lg-inline-block " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-down-alt" viewBox="0 0 16 16">
 												<path d="M3.5 3.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 12.293V3.5zm4 .5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1h-1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1h-3zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1h-5zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5z"/>

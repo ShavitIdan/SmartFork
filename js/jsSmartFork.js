@@ -105,3 +105,15 @@ checkboxes.forEach(checkbox => {
 //   .then(response => response.json())
 //   .then(data => updateForm(data));
  
+
+
+
+$(document).ready(function() {
+  $('.modal').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget);
+    var recipient = button.data('whatever');
+    var modal = $(this);
+    modal.find('.modal-title').text('New message to ' + recipient);
+    modal.find('.modal-body input').val(recipient);
+  });
+});

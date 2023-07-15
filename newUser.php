@@ -1,6 +1,9 @@
 <?php 
     include "config.php"; 
     include "db.php";
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     session_start(); 
 
 	// check if the user tring to get from url.
@@ -126,7 +129,7 @@
                     <!-- bread -->
                     <div class="col-3 my-2 d-none d-sm-block ">
                         <a href="#" class="d-none d-lg-inline-block text-black">Home/</a>
-                        <a href="index.html" class="d-none d-lg-inline-block text-black">Users/</a>
+                        <a href="index.php" class="d-none d-lg-inline-block text-black">Users/</a>
                         <a href="#" class="d-none d-lg-inline-block selected">New User</a>
                     </div>
                     <div class="container-fluid border rounded mt-4 ">
