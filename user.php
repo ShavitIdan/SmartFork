@@ -4,29 +4,87 @@
 	session_start(); 
 
 	// check if the user tring to get from url.
-	if(!isset($_SESSION["user_id"])){
-		header('Location: ' . URL . 'index.php');
+    if(!isset($_SESSION["user_id"])){
+		header('Location: ' . URL . 'login.php');
 	}
-
-    $prodId = $_GET["patient_id"];
-    $query  = "SELECT * FROM tbl_205_patients where patient_id=" . $prodId;
-
-    $result = mysqli_query($connection, $query);
-    if($result) {
-        $row = mysqli_fetch_assoc($result); //there is only 1 item with id=X
-    }
-    else die("DB query failed.");
-
-
-
     
-    $result2 = mysqli_query($connection, $query);
 
-	
 
-    if(!$result2) {
-        die("DB query failed.");
+    if(isset($_SESSION["user_type"])){
+        $user_type = $_SESSION["user_type"];
+		if( $user_type == "admin"){
+            $prodId = $_GET["patient_id"];
+            $query  = "SELECT * FROM tbl_205_patients where patient_id=" . $prodId;
+        
+            $result = mysqli_query($connection, $query);
+            if($result) {
+                $row = mysqli_fetch_assoc($result); //there is only 1 item with id=X
+            }
+            else die("DB query failed.");
+        
+        
+        
+            
+            $result2 = mysqli_query($connection, $query);
+            if(!$result2) {
+                die("DB query failed.");
+            }
+        
+        
+            if(isset($_POST["patient_note_edit"]))
+            {
+                $note = $_POST["patient_note_edit"];
+        
+                
+                $query3 = "UPDATE tbl_205_patients SET patient_note = '$note', patient_note_changed=1 WHERE patient_id = '$prodId' ";        
+                
+                $result3 = mysqli_query($connection, $query3);
+                if(!$result3) {
+                    die("DB query failed.");
+                }
+            
+            }
+            $curUserQuery = mysqli_query($connection, "SELECT * FROM tbl_205_nutritionist WHERE nutr_email ='" . $_SESSION["user_email"] . "' LIMIT 1");
+			$curUser = mysqli_fetch_assoc($curUserQuery);
+			$_SESSION["nutr_id"] = $nutr_id;
+        }
+        else{
+            if(isset( $_GET["food_id"]))
+            {
+                $foodid = $_GET["food_id"];
+                $query6  = "SELECT * FROM tbl_205_food where food_id=" . $foodid;
+                
+                    $result6 = mysqli_query($connection, $query6);
+                    if($result6) {
+                        $row = mysqli_fetch_assoc($result6); //there is only 1 item with id=X
+                    }
+                    else die("DB query failed.");
+    
+    
+    
+    
+                    if(isset($_POST["food_rec"]))
+                    {
+                        $reaction = $_POST["food_rec"];
+                
+                        
+                        $escaped_reaction = mysqli_real_escape_string($connection, $reaction);
+                        $query5 = "UPDATE tbl_205_food SET food_reac = '$escaped_reaction' WHERE food_id = '$foodid' ";
+    
+                        $result5 = mysqli_query($connection, $query5);
+                        if(!$result5) {
+                            die("DB query failed.");
+                        }
+                    
+                    }
+                    $curUserQuery = mysqli_query($connection, "SELECT * FROM tbl_205_patients WHERE patient_email ='" . $_SESSION["user_email"] . "' LIMIT 1");
+                    $curUser = mysqli_fetch_assoc($curUserQuery);
+            }
+            
+        }
+       
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,14 +107,20 @@
 		<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
 			<div class="position-sticky">
 				<div class="list-group list-group-flush mx-3 mt-4">
-					<a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+					<a href="index.php" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
 						<img src="images/Home.png"><span class="ms-3">Home</span>
 					</a>
 					<a href="#" class="list-group-item list-group-item-action py-2 ripple">
 						<img src="images/Vector.png"><span class="ms-3">Analytics</span>
 					</a>
-					<a href="index.html" class="list-group-item list-group-item-action py-2 ripple active">
-						<img src="images/Vector2.png"><span class="ms-3">Users</span>
+					<a href="index.php" class="list-group-item list-group-item-action py-2 ripple active">
+                        <?php
+                                if($user_type == "admin"){
+                                echo '<img src="images/Vector2.png"><span class="ms-3">Users</span>';}
+                                else{
+                                    echo '<img src="images/food_icon.png"><span class="ms-3">Foods</span>';
+                                }
+                        ?>
 					</a>
 					<a href="#" class="list-group-item list-group-item-action py-2 ripple">
 						<img src="images/noun-shopping-bag-1092888 (1).png"><span class="ms-3">Restaurants</span>
@@ -89,24 +153,28 @@
 				</button>
 
 				<!-- Logo -->
-				<a class="navbar-brand" id="logo" href="#"></a>
+				<a class="navbar-brand" id="logo" href="index.php"></a>
 				<!-- Right links -->
 				<ul class="navbar-nav ms-auto d-flex flex-row">
 					<!-- Avatar -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-							id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-							<img src="images/Yael pic.png" class="rounded-circle" height="35" alt="Avatar" loading="lazy" />
+						<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <?php
+							if ($user_type == "admin"){
+								echo "<img src='".$curUser["nutr_img"]."' class='rounded-circle' height='35' alt='Avatar' loading='lazy' />";}
+							else{
+								echo "<img src='".$curUser["patient_img"]."' class='rounded-circle' height='35' alt='Avatar' loading='lazy' />";}
+							?>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
 							<li>
-							<a class="dropdown-item" href="#">My profile</a>
+							<a class="dropdown-item" href="profile.php">My profile</a>
 							</li>
 							<li>
 							<a class="dropdown-item" href="#">Settings</a>
 							</li>
 							<li>
-							<a class="dropdown-item" href="#">Logout</a>
+							<a class="dropdown-item" href="login.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -122,38 +190,64 @@
             <div class="row p-2 ">
                 <!-- bread -->
                 <div class="col-4 my-2 d-none d-sm-block d-md-block d-flex">
-                    <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
-                    <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Users/</a>
-                    <?php
-                        echo '<a href="#" class="fs-4 d-none d-lg-inline-block selected">' . $row["patient_full_name"] .'</a>';
-                    ?>
-                    
+                <?php
+                    if($user_type == "admin"){
+                        echo '<a href="index.php" class="fs-6  d-none d-md-inline-block d-lg-none text-black">Home/</a>
+                            <a href="index.php" class="fs-6 d-none d-md-inline-block d-lg-none text-black">Users/</a>
+                            <a href="#" class="fs-6 d-none d-md-inline-block d-lg-none selected">' . $row["patient_full_name"] .'</a>
 
+                            <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
+                            <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Users/</a>
+                            <a href="#" class="fs-4 d-none d-lg-inline-block selected">' . $row["patient_full_name"] .'</a>';
+                        }
+                    else{
+                        echo '<a href="index.php" class="fs-6  d-none d-md-inline-block d-lg-none text-black">Home/</a>
+                            <a href="index.php" class="fs-6 d-none d-md-inline-block d-lg-none text-black">Foods/</a>
+                            <a href="#" class="fs-6 d-none d-md-inline-block d-lg-none selected">' . $row["food_name"] .'</a>
+
+                            <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Home/</a>
+                            <a href="index.php" class="fs-4 d-none d-lg-inline-block text-black">Foods/</a>
+                            <a href="#" class="fs-4 d-none d-lg-inline-block selected">' . $row["food_name"] .'</a>';
+                    }
+                ?>
                 </div>
             </div>
             <div class="row m-5">
                 <!-- profile -->
-                <div id="white_parg" class="row mb-4">
+                <div  class="row mb-4 bg-light">
                     <div class="col-3 my-2">
-                        <img id="pepperProfile" src="images/Peper profile.png"> 
+                        <?php
+                        if($user_type == "admin"){
+                            echo'<img id="pepperProfile" src="images/defult_pic_user.jpg">'; 
+                        }
+                        else{
+                            echo'<img calss="d-none " src="images/food2.png">';
+                        }
+                        ?>
                             <!-- ipad -->
                         <div class="row  d-none d-md-block d-lg-none  ">
-                            <div class="col-1 m-3">
-                                <button id="btnProfile" type="button" class="btn light-blue">
+                            <?php
+                             if($user_type == "admin"){
+                                echo'<div class="col-1 m-3">
+                                <button type="button" class="btnProfile btn light-blue">
                                     <a href="#" class="text-dark"  >Edit profile</a>
                                 </button>
                             </div>
                             <div class="col-auto m-3">
-                                <button id="btnProfile" type="button" class="btn light-blue">
+                                <button type="button" class="btnProfile btn light-blue">
                                     <a href="#" class="text-dark" >Edit diet</a>
                                 </button>
-                            </div>                              
+                            </div> ';   
+                             }
+                            ?>
+                                                      
                         </div>
                     </div>
                     <!-- desktop and ipad -->
                     <?php
+                    if($user_type == "admin"){
                         echo'
-                        <div class="col-3 mt-3 d-none d-sm-block">
+                        <div class="col-3 mt-3 d-none d-sm-block bg-light">
                             <div class="row">
                                 <span class="fs-3 text-dark">' . $row["patient_full_name"] .'</span>
                                 <span class="mt-2 text-dark" style="font-size: 14px;">' . $row["patient_email"]. '</span>
@@ -209,56 +303,187 @@
                                 <span class="mt-1 text-dark">Diet: ' . $row["patient_diet"]. '</span>
                                 <span class="mt-1 text-dark">Started at: ' . $row["started_diet"]. '</span>
                             </div>
-                        </div>
+                        </div> ';
                        
+                    }
+                    else{
+                       echo '
+                       <div class="col-6 d-none d-sm-block"></div>
+                        <div class="col-3 mt-3 d-none d-sm-block bg-light">
+                            <div class="row">
+                                <span class="fs-3 text-dark">' . $row["food_name"] .'</span>
+                                <span class="mt-2 text-dark" style="font-size: 14px;">Calories : ' . $row["calories"]. '</span>
+                                <div class="row mt-5"></div>
+                                <span class="mt-3 text-dark">Added at: ' . $row["food_date"]. '</span>
+                            </div>
+                        </div>
+                        <div class="row d-block d-sm-none">
+                            <span class="fs-3 text-dark">' . $row["food_name"] .'</span>
+                            <span class="mt-2 text-dark" style="font-size: 14px;">Calories : ' . $row["calories"]. '</span>
+                            <div class="row mt-5"></div>
+                            <span class="mt-3 text-dark">Added at: ' . $row["food_date"]. '</span>
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    ';
+                    }
                         
                     
-                        ';
+                       
                     ?>
                     
                      <!-- iphone -->
-                     <div class="row d-block d-sm-none my-3">
-                            <div class="row my-2">
-                                <button id="btnProfile" type="button" class="btn light-blue">
-                                    <a href="#" class="text-dark"  >Edit profile</a>
-                                </button>
-                            </div>
-                            <div class="row">
-                                <button id="btnProfile" type="button" class="btn light-blue">
-                                    <a href="#" class="text-dark" >Edit diet</a>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- desktop -->
-                        <div class="col-1 d-none d-xl-block d-lg-block">
-                            <div class="row mt-5"></div>
-                            <div class="row mt-3">
-                                <button id="btnProfile" type="button" class="btn light-blue">
-                                    <a href="#" class="text-dark"  >Edit profile</a>
-                                </button>
-                                
-                            </div>
-                            <div class="row my-2 ">
-                                <button id="btnProfile" type="button" class="btn light-blue">
-                                    <a href="#" class="text-dark" >Edit diet</a>
-                                </button>
-                            </div>
-                            
-                        </div>
+                     <?php
+                     if($user_type == "admin"){
+                        echo'<div class="row d-block d-sm-none my-3">
+                     <div class="row my-2">
+                         <button type="button" class="btnProfile btn light-blue">
+                             <a href="#" class="text-dark"  >Edit profile</a>
+                         </button>
+                     </div>
+                     <div class="row">
+                         <button type="button" class="btnProfile btn light-blue">
+                             <a href="#" class="text-dark" >Edit diet</a>
+                         </button>
+                     </div>
+                 </div>
+                 <!-- desktop -->
+                 <div class="col-1 d-none d-xl-block d-lg-block">
+                     <div class="row mt-5"></div>
+                     <div class="row mt-3">
+                         <button type="button" class="btnProfile btn light-blue">
+                             <a href="#" class="text-dark"  >Edit profile</a>
+                         </button>
+                         
+                     </div>
+                     <div class="row my-2 ">
+                         <button type="button" class="btnProfile btn light-blue">
+                             <a href="#" class="text-dark" >Edit diet</a>
+                         </button>
+                     </div>
+                     
+                 </div>';
+                     }
+                     
+                     ?>
+                     
                 </div> 
                 <!-- notes -->
-                <div id="white_parg" class="row mt-5 mb-4">
+                <div  class="row mt-5 mb-4 bg-light">
                     <div class="col mb-3">
                         <div class="row">
-                            <span class="fs-3 my-2 text-dark">Notes</span>
+                            <div class="row">
+                            <div class="col-11">
+                                <?php
+                                    if($user_type == "admin"){
+                                        echo'<span class="fs-3 my-2 text-dark">The Last Note</span>'; 
+                                    }
+                                    else{
+                                        echo'<span class="fs-3 my-2 text-dark">Reactions due to the dish</span>';
+                                    }
+                                ?>
+                                    
+                                </div>
+                                <div class="col-1">
+                                    <?php
+                                        if($user_type == "admin"){
+                                            echo' <button type="button" id="btn_note" class="btnProfile btn light-blue my-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                            </svg>
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit your note </h1>
+                                                    </div>
+                                                    <form action="#" method="post">
+                                                        <div class="modal-body">
+                                                            <textarea type="text" class="form-control text-start" name="patient_note_edit" required>';?><?php
+                                                                    $content = $row["patient_note"];
+                                                                    $lines = explode("\n", $content);
+                                                                    $formattedContent = implode("\n", array_map('trim', $lines));
+                                                                    echo $formattedContent;
+                                                                    ?><?php
+                                                            echo'</textarea>
+                                                        </div>
+    
+    
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button   type="submit" class="btn btn-success submit">Submit</button>
+    
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>'; 
+                                        }
+                                        else{
+                                            echo' <button type="button" id="btn_note" class="btnProfile btn light-blue my-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                            </svg>
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit your note </h1>
+                                                    </div>
+                                                    <form action="#" method="post">
+                                                        <div class="modal-body">
+                                                            <textarea type="text" class="form-control text-start" name="food_rec" required>';?><?php
+                                                                    $content1 = $row["food_reac"];
+                                                                    $lines1 = explode("\n", $content1);
+                                                                    $formattedContent1 = implode("\n", array_map('trim', $lines1));
+                                                                    echo $formattedContent1;
+                                                                    ?><?php
+                                                            echo'</textarea>
+                                                        </div>
+    
+    
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button   type="submit" class="btn btn-success">Submit</button>
+    
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>'; 
+                                        }
+                                    ?>
+                                   
+                                </div>
+                            </div>
                             <?php
+                            if($user_type == "admin"){
                                 echo '<span class="text-dark">' . $row["patient_note"]. '</span>';
+                            }
+                            else{
+                                echo '<span class="text-dark">' . $row["food_reac"]. '</span>';
+                            }
+                                
+                               
+                                
                             ?>
                             
                         </div>
                     </div>
                 </div>
-                <div id="white_parg" class="row mb-4">
+                <?php
+                 if($user_type == "admin"){
+                    echo'
+                    <div  class="row mb-4 bg-light">
                     <div class="col">
                         <div class="row">
                             <span class="fs-3 my-2 text-dark">Recent activities</span>
@@ -287,7 +512,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="white_parg" class="row d-none d-xl-block d-lg-block d-md-block">
+                <div  class="row d-none d-xl-block d-lg-block d-md-block bg-light">
                         <div class="col">
                             <div class="row">
                                 <span id="titleSize" class="my-2 text-dark">Analytics</span>
@@ -301,11 +526,13 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                </div>';
+                 }
+                ?>
+                
             </div>
         </div>
     </main>
-
     <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>

@@ -1,6 +1,25 @@
 {
-    "name": "Name",
-    "weight": "Weight",
-    "bmi": "BMI"
+    "option1" : [
+        {
+            "all":"All",
+            "custom-made": "Custom-made",
+            "carnivore": "Carnivore",
+            "low-carbs": "Low-Carbs",
+            "veganism": "Veganism"
+        }
+    ],
+    "option2" : [
+        {
+            "all":"All",
+            "Italian": "Italian",
+            "Japanese": "Japanese",
+            "Mexican": "Mexican",
+            "Thai": "Thai",
+            "American": "American",
+            "Vietnamese": "Vietnamese",
+            "Indian": "Indian",
+            "Middle Eastern": "Middle Eastern"
+        }
+    ]
 }
   

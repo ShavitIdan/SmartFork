@@ -1,9 +1,106 @@
-//------------------------ dark theme ------------------------------------
+// ------------------------ json ------------------------------------
+// Update the form with dynamic content
+
+// Fetch the JSON data
+fetch("data/option.json")
+  .then(response => response.json())
+  .then(data => showData(data));
+
+    function showData(data) {
+
+      const screenWidth = window.innerWidth;
+      const ul2 = document.getElementById('target2');
+      if(ul2)
+      {
+        for (const key in data.option2[0]) {
+          const li2 = document.createElement('li');
+          
+          li2.classList.add('dropdown-item');
+          const sHtml2 = data.option2[0][key];
+          li2.innerHTML = sHtml2;
+          ul2.appendChild(li2);
+        }
+      
+        // Add a single event listener to the ul element with id "target2"
+        ul2.addEventListener('click', function(event) {
+          const target2 = event.target;
+          const dropdownButton2 = document.getElementById('dropdownMenuButton');
+          dropdownButton2.innerHTML = target2.innerHTML;
+      
+          const persons = document.getElementsByClassName('person');
+      
+          for (let i = 0; i < persons.length; i++) {
+            const type = persons[i].querySelector('.type_target').innerText.toLowerCase();
+            const type2 = persons[i].querySelector('.type_target').innerText.toLowerCase();
+            if (dropdownButton2.innerHTML.toLowerCase() === 'all' || type === dropdownButton2.innerHTML.toLowerCase() || type2 === dropdownButton2.innerHTML.toLowerCase()) {
+              if(screenWidth < 768)
+              {
+                persons[i].style.display = 'table-row';
+              }
+              else
+              {
+                persons[i].style.display = 'block';
+              }
+
+            } else {
+              persons[i].style.display = 'none';
+            }
+          }
+        });
+      }
+
+      const ul = document.getElementById('target');
+      if(ul)
+      {
+        for (const key in data.option1[0]) {
+          const li = document.createElement('li');
+          li.classList.add('dropdown-item');
+          const sHtml = data.option1[0][key];
+          li.innerHTML = sHtml;
+          ul.appendChild(li);
+        }
+      
+        // Add a single event listener to the ul element
+        ul.addEventListener('click', function(event) {
+          const target = event.target;
+          const dropdownButton = document.getElementById('dropdownMenuButton');
+          dropdownButton.innerHTML = target.innerHTML;
+          
+          const persons = document.getElementsByClassName('person');
+          
+          for (let i = 0; i < persons.length; i++) {
+            const diet = persons[i].querySelector('.diet_target').innerText.toLowerCase();
+            const diet2 = persons[i].querySelector('.diet_target').innerText.toLowerCase();
+            if (dropdownButton.innerHTML.toLowerCase() === 'all' || diet === dropdownButton.innerHTML.toLowerCase() || diet2 === dropdownButton.innerHTML.toLowerCase() ) { // Compare with the selectedOption
+              if(screenWidth < 768)
+              {
+                persons[i].style.display = 'table-row';
+              }
+              else
+              {
+                persons[i].style.display = 'block';
+              }
+
+            } else {
+              persons[i].style.display = 'none';
+            }
+          }
+        });
+      }
+      
+    }
+
+    
+
+
+
 window.onload = () => {
-    btn = document.getElementById('btnSwitch');
-    logo = document.getElementById('logo');
-    themeIcon = document.getElementById('themeIcon');
-    textElement = document.getElementById('themeText');
+
+  //------------------------ dark theme ------------------------------------
+    const btn = document.getElementById('btnSwitch');
+    const logo = document.getElementById('logo');
+    const themeIcon = document.getElementById('themeIcon');
+    const textElement = document.getElementById('themeText');
     btn.addEventListener('click',()=>{
         if (document.documentElement.getAttribute('data-bs-theme') == 'dark' || document.documentElement.getAttribute('data-bs-theme') =='light-blue') {
             document.documentElement.setAttribute('data-bs-theme','light');
@@ -22,6 +119,7 @@ window.onload = () => {
     })
     
     // ------------------------ charts ------------------------------------
+  if (document.getElementById("pieChart") !== null){
     var ctxP = document.getElementById("pieChart").getContext('2d');
     var myPieChart = new Chart(ctxP, {
       type: 'pie',
@@ -60,15 +158,15 @@ window.onload = () => {
           }
         },
       });
-
-
-    
-};
+    };
+  };
 
 // ------------------------ date picker ------------------------------------
-$(function(){
-$('#datepicker').datepicker();
-});
+if (document.getElementById("datepicker") !== null){
+  $(function(){
+  $('#datepicker').datepicker();
+  });
+};
 
 // ------------------------ change checkbox color ------------------------------------
 
@@ -87,33 +185,25 @@ checkboxes.forEach(checkbox => {
 
 
 
-// ------------------------ json ------------------------------------
-// Update the form with dynamic content
-// function updateForm(data) {
-//   const ul = document.getElementById('json-menu');
-
-//   for (const key in data) {
-//     const li = document.createElement('li');
-//     li.className = 'dropdown-item fs-6';
-//     li.innerHTML = data[key];
-//     ul.appendChild(li);
-//   }
-// }
-
-// // Fetch the JSON data
-// fetch("data/option.json")
-//   .then(response => response.json())
-//   .then(data => updateForm(data));
- 
-
-
-
-$(document).ready(function() {
-  $('.modal').on('show.bs.modal', function(event) {
-    var button = $(event.relatedTarget);
-    var recipient = button.data('whatever');
-    var modal = $(this);
-    modal.find('.modal-title').text('New message to ' + recipient);
-    modal.find('.modal-body input').val(recipient);
+if (document.getElementById("theSpinner") !== null){
+  var spinner = document.getElementById('theSpinner');
+  if(document.getElementById("submit") !== null){
+  $('#submit').click(function() {
+    spinner.style.display = 'block';
+    // formModal.style.display = 'none';
+    setTimeout(function() {
+      spinner.style.display = 'none';    
+    }, 1000);
   });
-});
+}
+else{$('.submit').click(function() {
+  spinner.style.display = 'block';
+  // formModal.style.display = 'none';
+  setTimeout(function() {
+    spinner.style.display = 'none';
+    
+  }, 1000);
+})
+};
+};
+
